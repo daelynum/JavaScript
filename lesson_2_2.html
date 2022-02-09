@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function getNumber(min, max){
+        let number = parseInt(Math.random()*(max - min) + min);
+        if (number === -0) number = 0;
+        return number;
+    }
+    let basket = [
+        {
+            product: "компьютерная мышь",
+            price: getNumber(50, 100)
+        },
+        {
+            product: "монитор",
+            price: getNumber(50, 100)
+        },
+        {
+            product: "клавиатура",
+            price: getNumber(50, 100)
+        },
+        {
+            product: "ноутбук",
+            price: getNumber(50, 100)
+        }
+    ];
+    let basketPrice = 0;
+    for (let prod of basket){
+        basketPrice += prod.price;
+        alert("Товар " + prod.product + " стоит: " + prod.price);
+    }
+
+    alert("Стоимость корзины: " + basketPrice + " у.е.");
+</script>
+</body>
+</html>
