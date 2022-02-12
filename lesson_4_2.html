@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const Basket =
+        {
+            goods: [],
+            add(id, name, count, price){
+                this.goods.push([id, name, count, price]);
+            },
+            countBasketPrice(){
+                return this.goods.reduce((total, item) => total + item[2] * item[3], 0);
+            },
+        };
+
+
+    Basket.add(1, 'карандаш', 1, 30)
+    Basket.add(2, 'ручка', 2, 12)
+    Basket.add(3, 'пенал', 7, 16)
+
+    console.log(`Сумма товаров в корзине: ${Basket.countBasketPrice()}`)
+</script>
+</body>
+</html>
